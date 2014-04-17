@@ -2,6 +2,8 @@
 {
 	'use strict';
 
+	var isP1turn;
+
 	$(document).ready(initialize);
 
 	function initialize()
@@ -12,7 +14,8 @@
 	function start()
 	{
 		setUpBoard();
-		$('#board').on('click', '.playable', function(){alert('clicked');});
+		isP1turn = true;
+		$('#board').on('click', '.playable div', selectPiece);
 	}
 
 	function setUpBoard()
@@ -37,10 +40,24 @@
 				// Add a checker class to this piece
 				var classToAdd = 'checker ';
 				// If the piece belongs to player 2, add his class to it as well
-				classToAdd += (!j) ? 'player2' : '';
+				classToAdd += (!j) ? 'player2' : 'currentPlayer';
 				// Now set the class(es)
 				startingSpaces[j].children('div').addClass(classToAdd);
 			}
+		}
+	}
+
+	function selectPiece()
+	{
+		var $checker = $(this);
+		// If there is a checker here...
+		if($checker.hasClass('checker'))
+		{
+			//... then check to see if it is th current player's
+			var isPlrChecker = (isP1turn) ?
+				!$checker.hasClass('player2') :
+					$checker.hasClass('player2');
+			isPlrChecker = isPlrChecker;
 		}
 	}
 
