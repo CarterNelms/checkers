@@ -1,5 +1,9 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
+@borderWidth: 4px;
+@squareLength: 60px;
+@checkerWidth: @squareLength - 2 * @borderWidth;
+
 body{
   background-image: url('../media/bg.svg');
   background-size: cover;
@@ -56,21 +60,40 @@ html, button, input, select, textarea,
 .square{
   background-color: red;
   border: 2px solid white;
-  div{
-    width: 60px;
-    height: 60px;
-    margin: 4px;
-  }
+  padding: 3px;
+  width: @squareLength;
+  height: @squareLength;
 }
 
 .square.playable{
   background-color: black;
 }
 
+.square.possibleMove{
+  background-color: #552;
+  cursor: pointer;
+}
+
+.square.possibleMove:hover{
+  background-color: #882;
+}
+
+.square.possibleJump{
+  background-color: #242;
+  cursor: pointer;
+}
+
+.square.possibleJump:hover{
+  background-color: #262;
+}
+
 .checker{
   background-image: url('../media/images/checkers/black.png');
   background-size: cover;
-  cursor: pointer;
+  width: @checkerWidth;
+  height: @checkerWidth;
+  margin: @borderWidth;
+  //transition: padding .2s, margin .2s, border .2s;
 }
 
 .checker.player2{
@@ -78,7 +101,25 @@ html, button, input, select, textarea,
   background-size: cover;
 }
 
-.checker.currentPlayer:hover{
+.checker.selected{
   margin: 0;
-  padding: 4px;
+  border: @borderWidth solid blue;
+  //transition: padding 0s, margin 0s, border 0s;
+}
+
+.checker.king{
+  background-image: url('../media/images/checkers/black-king.png');  
+}
+
+.checker.player2.king{
+  background-image: url('../media/images/checkers/red-king.png');  
+}
+
+.checker.currentPlayer:hover{
+  cursor: pointer;
+}
+
+.checker.currentPlayer:not(.selected):hover{
+  margin: 0;
+  padding: @borderWidth;
 }

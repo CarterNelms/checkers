@@ -24,7 +24,6 @@ html(lang='en')
 								- for(var j = 0; j < cols; ++j)
 									- var playableClass = ((i+j)%2) ? 'playable' : '';
 										td(class="square "+playableClass, data-x=j, data-y=i)
-											div
 
 		script(src='js/vendor/jquery-2.1.0.js')
 		script(src='js/source/main.js')
