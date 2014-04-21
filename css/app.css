@@ -1,0 +1,108 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+body {
+  background-image: url('../media/bg.svg');
+  background-size: cover;
+  background-attachment: fixed;
+}
+html,
+button,
+input,
+select,
+textarea,
+.pure-g [class*="pure-u"] {
+  /* Set your content font stack here: */
+  font-family: 'Open Sans', sans-serif;
+}
+.button-success,
+.button-error,
+.button-warning,
+.button-secondary {
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+.button-success {
+  background: #52e365;
+}
+.button-error {
+  background: #d2734e;
+}
+.button-warning {
+  background: #df7514;
+}
+.button-secondary {
+  background: rgba(108, 67, 223, 0.55);
+}
+.button-xsmall {
+  font-size: 50%;
+}
+.button-small {
+  font-size: 85%;
+}
+.button-large {
+  font-size: 110%;
+}
+.button-xlarge {
+  font-size: 150%;
+}
+#display {
+  width: 200px;
+  height: 75px;
+  background-color: white;
+  display: inline-block;
+  color: red;
+  border: 3px solid black;
+  font-size: 24px;
+}
+.square {
+  background-color: red;
+  border: 2px solid white;
+  padding: 3px;
+  width: 60px;
+  height: 60px;
+}
+.square.playable {
+  background-color: black;
+}
+.square.possibleMove {
+  background-color: #552;
+  cursor: pointer;
+}
+.square.possibleMove:hover {
+  background-color: #882;
+}
+.square.possibleJump {
+  background-color: #242;
+  cursor: pointer;
+}
+.square.possibleJump:hover {
+  background-color: #262;
+}
+.checker {
+  background-image: url('../media/images/checkers/black.png');
+  background-size: cover;
+  width: 52px;
+  height: 52px;
+  margin: 4px;
+}
+.checker.player2 {
+  background-image: url('../media/images/checkers/red.png');
+  background-size: cover;
+}
+.checker.selected {
+  margin: 0;
+  border: 4px solid #0000ff;
+}
+.checker.king {
+  background-image: url('../media/images/checkers/black-king.png');
+}
+.checker.player2.king {
+  background-image: url('../media/images/checkers/red-king.png');
+}
+.checker.currentPlayer.selectable:hover {
+  cursor: pointer;
+}
+.checker.currentPlayer.selectable:not(.selected):hover {
+  margin: 0;
+  padding: 4px;
+}
