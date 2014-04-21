@@ -57,6 +57,16 @@ html, button, input, select, textarea,
   font-size: 150%;
 }
 
+#display{
+  width: 200px;
+  height: 75px;
+  background-color: white;
+  display: inline-block;
+  color: red;
+  border: 3px solid black;
+  font-size: 24px;
+}
+
 .square{
   background-color: red;
   border: 2px solid white;
@@ -115,11 +125,11 @@ html, button, input, select, textarea,
   background-image: url('../media/images/checkers/red-king.png');  
 }
 
-.checker.currentPlayer:hover{
+.checker.currentPlayer.selectable:hover{
   cursor: pointer;
 }
 
-.checker.currentPlayer:not(.selected):hover{
+.checker.currentPlayer.selectable:not(.selected):hover{
   margin: 0;
   padding: @borderWidth;
 }
